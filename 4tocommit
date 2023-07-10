@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Definición de la estructura Estudiante
+// Definición de estructura estudiantes 
 struct Estudiante {
     int num;
     char nombre[50];
@@ -13,7 +13,7 @@ struct Estudiante {
     float promedio;
 };
 
-// Prototipos de funciones
+// Funciones
 void calcularProm(struct Estudiante* estudiante);
 void imprimirEstu(struct Estudiante* estudiantes, int numEstudiantes, FILE* archivo);
 void liberarMemoria(struct Estudiante* estudiantes);
@@ -63,13 +63,13 @@ int main() {
     
     imprimirEstu(estudiantes, numEstudiantes, archivoSalida);
 
-    // Cerrar el archivo de salida
+    // Cerrar el archivo
     fclose(archivoSalida);
 
-    // Liberar la memoria de estudiantes
+    // Liberar memoria estud
     liberarMemoria(estudiantes);
 
-    printf("El archivo ha sido creado y los estudiantes han sido ordenados con éxito.\n");
+    printf("El archivo ha sido creado exitosamente.\n");
 
     return 0;
 }
@@ -79,7 +79,7 @@ void calcularProm(struct Estudiante* estudiante) {
     estudiante->promedio = (estudiante->nota1 + estudiante->nota2 + estudiante->nota3) / 3;
 }
 
-// Función para imprimir los estudiantes en alumnos ordenados.txt
+// Función para imprimir los estudiantes de manera ordenada
 void imprimirEstu(struct Estudiante* estudiantes, int numEstudiantes, FILE* archivo) {
     int i;
     for (i = numEstudiantes - 1; i >= 0; i--) {
@@ -87,7 +87,7 @@ void imprimirEstu(struct Estudiante* estudiantes, int numEstudiantes, FILE* arch
     }
 }
 
-// Función para liberar la memoria de estu
+// Función para liberar la memoria de estud
 void liberarMemoria(struct Estudiante* estudiantes) {
     free(estudiantes);
 }
